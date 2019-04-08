@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'search_stocks', to: 'stocks#search'
+  post 'user_stocks', to: 'user_stocks#follow'
+  #delete 'user_stocks', to: 'user_stocks#unfollow'
+  resources :user_stocks, only: [:destroy]
 
 end
